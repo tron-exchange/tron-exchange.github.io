@@ -59,11 +59,17 @@ header nav a {
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
+    padding: 8px 12px; /* Add padding for the hover effect */
+    border: 2px solid transparent; /* Initially no border */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for border and background */
+    border-radius: 5px;
 }
 
 header nav a:hover {
-    color: #0366d6;
+    background: #290406;
+color: #ffffff; /* Ensure text remains white */
 }
+
 
 /* Main content should take remaining space */
 main {
