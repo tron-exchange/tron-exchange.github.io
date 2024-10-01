@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TRON | GitHub | Crypto Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/tron-logo.png" alt="TRON Logo">
+                <h1>
+                   Crypto Exchange
+                </h1>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <img src="/tron-bg.png" alt="Tron Bg" class="tron-bg">
+            <h2>Exchanger works <span style="color:#FF0013">24/7</span>, reliable and fast</h2>
+            <p class="description-text">Privacy-focused, fast, and reliable tool to easily convert USDT to TRX</p>
+        </div>
+
+        <!-- Exchange Section -->
+        <div class="container exchange-container">
+            <div class="exchange-section">
+                <!-- You Give Section -->
+                <div class="currency-box">
+                    <label for="usdt-amount">You Send</label>
+                    <div class="currency-select">
+                        <img src="/tether.png" alt="Tether Icon" class="currency-icon">
+                        <select id="currency" name="currency">
+                            <option value="usdt-trc">Tether TRC20 USDT</option>
+                            <option value="usdt-erc">Tether ERC20 USDT</option>
+                        </select>
+                    </div>
+                    <input type="number" id="usdt-amount" min="20" max="20000">
+                    <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 20,000 USDT</p>
+                    <p>Exchange rate: 1 USDT = 7.5 TRX</p>
+                </div>
+
+                <!-- You Get Section -->
+                <div class="currency-box">
+                    <label for="trx-amount">You Receive</label>
+                    <div class="currency-select">
+                        <img src="/tron.png" alt="TRON Icon" class="currency-icon">
+                        <select id="currency-receive" name="currency-receive">
+                            <option value="trx">TRON TRX</option>
+                        </select>
+                    </div>
+                    <input type="number" id="trx-amount">
+                    <p>Exchange rate: 0.1333 USDT = 1 TRX</p>
+                    <p>Reserve: 7416805 TRX</p>
+                </div>
+            </div>
+            <hr>
+            <p>ⓘ You are creating a public repository in your personal account.</p>
+            <hr>
+            <!-- Exchange Button -->
+            <a href="#" class="btn exchange-btn">Exchange</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TRON Exchange by GitHub | Designed by Andrii</p>
+        </div>
+    </footer>
+
+    <script>
+        const usdtInput = document.getElementById('usdt-amount');
+        const trxInput = document.getElementById('trx-amount');
+        const errorMessage = document.getElementById('error-message');
+        const exchangeRate = 7.5;
+
+        // Function to update TRX amount based on USDT input
+        function updateTRX() {
+            const usdtAmount = parseFloat(usdtInput.value);
+            if (usdtAmount >= 20 && usdtAmount <= 20000) {
+                trxInput.value = (usdtAmount * exchangeRate).toFixed(2);
+                errorMessage.style.display = 'none'; // Hide error message if input is valid
+            } else {
+                errorMessage.style.display = 'block'; // Show error message if input is invalid
+            }
+        }
+
+        // Function to update USDT amount based on TRX input
+        function updateUSDT() {
+            const trxAmount = parseFloat(trxInput.value);
+            const usdtAmount = (trxAmount / exchangeRate).toFixed(2);
+            usdtInput.value = usdtAmount;
+
+            // Check if the reverse-converted USDT amount is within valid range
+            if (usdtAmount >= 20 && usdtAmount <= 20000) {
+                errorMessage.style.display = 'none';
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        // Add event listeners
+        usdtInput.addEventListener('input', updateTRX);
+        trxInput.addEventListener('input', updateUSDT);
+
+        // Prevent USDT input value outside the min/max limits
+        usdtInput.addEventListener('blur', function() {
+            if (usdtInput.value < 20) {
+                usdtInput.value = 20;
+                updateTRX();
+            } else if (usdtInput.value > 20000) {
+                usdtInput.value = 20000;
+                updateTRX();
+            }
+        });
+    </script>
+
+</body>
+</html>
