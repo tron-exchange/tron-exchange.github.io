@@ -320,3 +320,19 @@ hr {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+a{
+    color: #4493F8;
+    font-size: 12px;
+}
+
+.footer-text{
+    font-size: 12px;
+    align-items: center;
+}
+
+.img-footer {
+    max-height: 24px;
+    vertical-align: middle;
+    margin-right: 5px; /* Adds some space between the image and text */
+}
