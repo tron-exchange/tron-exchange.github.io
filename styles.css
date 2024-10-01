@@ -133,6 +133,12 @@ footer {
 .currency-box {
     width: 45%;
     text-align: left;
+    padding-left: 20px; /* Add space to the left of the second box */
+}
+
+.give-box {
+    border-right: 1px solid #3D444D; /* Vertical line */
+    padding-right: 20px; /* Add some space to the right of the border */
 }
 
 /* For smaller screens, ensure the currency boxes take full width */
@@ -204,6 +210,7 @@ p{
     margin-top: 20px;
     cursor: pointer;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    margin-left: 20px;
 }
 
 /* Hover state */
@@ -297,4 +304,14 @@ hr {
     border: none;            /* Remove default border */
     height: 1px;            /* Set the height (thickness) */
     background-color: #3D444D; /* Set the color to gray */
+}
+
+.description-block{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-top: #3D444D 1px solid;
+    border-bottom: #3D444D 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
