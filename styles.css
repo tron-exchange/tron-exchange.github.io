@@ -19,7 +19,7 @@ body {
 header {
     background-color: #010409;
     color: #f0f6fc;
-    padding: 16px 0;
+    padding: 14px 0;
     border-bottom: 1px solid #3D444D;
 }
 
@@ -55,7 +55,6 @@ header nav {
 
 header nav a {
     color: #ffffff;
-    margin-left: 20px;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
