@@ -49,8 +49,7 @@
                     <div class="currency-select">
                         <img src="/tether.png" alt="Tether Icon" class="currency-icon">
                         <select id="currency" name="currency">
-                            <option value="usdt-trc">Tether TRC20 USDT</option>
-                            <option value="usdt-erc">Tether ERC20 USDT</option>
+                            <option value="usdt-trc">Tether USDT</option>
                         </select>
                     </div>
                     <input type="number" id="usdt-amount" min="20" max="20000">
@@ -73,10 +72,10 @@
                 </div>
             </div>
             <div class="description-block">
-                <p>ⓘ By proceeding, you acknowledge that this is a secure exchange facilitated by TRON Exchange and you understand the risks involved in crypto trading.</p>
+                <p>ⓘ By proceeding, you will be directed to the exchange menu. Please follow the instructions provided on the next page.</p>
             </div>
             <!-- Exchange Button -->
-            <a href="#" class="btn exchange-btn">Start Exchange</a>
+            <a href="#" class="btn exchange-btn"  onclick="startExchange()">Start Exchange</a>
         </div>
     </main>
 

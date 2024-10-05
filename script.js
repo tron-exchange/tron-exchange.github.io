@@ -42,3 +42,20 @@ usdtInput.addEventListener('blur', function() {
         updateTRX();
     }
 });
+
+// Function to generate a random transaction ID
+function generateTransactionID() {
+    return 'exchanging-' + Math.floor(Math.random() * 1000000); // Random 6-digit number
+}
+
+function startExchange() {
+    const usdtAmount = document.getElementById("usdt-amount").value;
+    if (usdtAmount >= 20 && usdtAmount <= 20000) {
+        const transactionID = generateTransactionID();
+        
+        // Redirect to the "exchanging.html" page with the transaction ID and USDT amount in the URL
+        window.location.href = `exchanging.html?transactionID=${transactionID}&usdtAmount=${usdtAmount}`;
+    } else {
+        document.getElementById("error-message").style.display = "block";
+    }
+}
