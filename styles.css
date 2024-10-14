@@ -414,7 +414,7 @@ select:focus {
     opacity: 1;
 }
 
-@media (max-width: 768px)
+@media (max-width: 1199px)
 {
     .exchange-container{
         width: 85%;
