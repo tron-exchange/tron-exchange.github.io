@@ -434,4 +434,16 @@ select:focus {
     .currency-box {
         padding-left: 10px; /* Add space to the left of the second box */
     }
+
+    .tron-bg{
+        max-height: 180px;
+    }
+
+    .description-text{
+        font-size: 18px;
+    }
+
+    .container{
+        width: 90%;
+    }
 }
