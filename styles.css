@@ -1,6 +1,6 @@
 /* Ensure the body and html cover the full height of the screen */
 html, body {
-    height: 1500px;
+    height: 1700px;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
