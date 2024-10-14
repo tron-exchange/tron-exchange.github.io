@@ -88,7 +88,8 @@ main {
 h2 {
     font-size: 32px;
     font-weight: 500;
-    margin-bottom: 8px; /* Reduce space between h2 and the paragraph */
+    margin-bottom: 8px; 
+    margin-top: 10px;
 }
 
 .description-text {
@@ -461,6 +462,7 @@ select:focus {
 .faq-item {
     margin-bottom: 20px;
     font-size: 15px;
+    margin-top: 20px;
 }
 
 .faq-question {
@@ -487,4 +489,20 @@ select:focus {
 
 .toggle-answer-btn:hover {
     color: #0366d6;
+}
+
+.reviews {
+    display: grid;
+}
+
+.box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    border-radius: 8px; 
+}
+
+.quotes{
+    font-style: italic;
+    font-size: 20px;
 }
