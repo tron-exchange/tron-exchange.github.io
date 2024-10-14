@@ -1,6 +1,6 @@
 /* Ensure the body and html cover the full height of the screen */
 html, body {
-    height: 100%;
+    height: 1500px;
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
@@ -13,6 +13,7 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Ensures full height of viewport is covered */
 }
 
 /* Header */
@@ -21,6 +22,8 @@ header {
     color: #f0f6fc;
     padding: 14px 0;
     border-bottom: 1px solid #3D444D;
+    
+    z-index: 2;
 }
 
 header .container {
@@ -72,14 +75,14 @@ color: #ffffff; /* Ensure text remains white */
 
 /* Main content should take remaining space */
 main {
-    flex-grow: 1;
+    flex-grow: 1; /* Main takes remaining height */
     padding: 40px;
     background: rgb(13,17,16);
     background: linear-gradient(23deg, rgba(13,17,16,1) 40%, rgba(71,0,5,1) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 60vh;
+    min-height: 60vh; /* Minimum height for content */
 }
 
 h2 {
@@ -97,6 +100,7 @@ h2 {
 
 .tron-bg {
     max-height: 200px;
+    z-index: 1;
 }
 
 /* Footer sticks to the bottom of the page */
@@ -106,7 +110,7 @@ footer {
     text-align: center;
     padding: 20px;
     border: 1px solid #3D444D;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Footer doesn’t shrink and stays at the bottom */
 }
 
 .container {
@@ -380,4 +384,53 @@ select:focus {
 
 .input-section{
     margin-bottom: 10px;
+}
+
+.info-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -110px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.info-icon:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 768px)
+{
+    .exchange-container{
+        width: 85%;
+    }
+
+    .give-box{
+        border-right: none;
+        border-bottom: 1px solid #3D444D;
+        padding-bottom: 15px;
+    }
+
+    main{
+        padding: 0px;
+    }
+
+    .currency-box {
+        padding-left: 10px; /* Add space to the left of the second box */
+    }
 }

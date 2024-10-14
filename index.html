@@ -23,10 +23,10 @@
                 <h1>TRON Exchange</h1>
             </div>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
+                <a href="index.html">Exchange</a>
+                <a href="rules.html">Rules</a>
                 <a href="faq.html">FAQ</a>
+                <a href="reviews.html">Reviews</a>
                 <a href="contact.html">Contact</a>
             </nav>
         </div>
@@ -52,8 +52,9 @@
                             <option value="usdt-trc">Tether USDT</option>
                         </select>
                     </div>
-                    <input type="number" id="usdt-amount" min="20" max="20000">
-                    <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 20,000 USDT</p>
+                    <label for="trx-amount">Amount for sending:</label>
+                    <input type="number" id="usdt-amount" min="20" max="34259">
+                    <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 34,259  USDT</p>
                     <p>Exchange rate: 1 USDT = 7.5 TRX</p>
                 </div>
 
@@ -66,16 +67,16 @@
                             <option value="trx">TRON TRX</option>
                         </select>
                     </div>
+                    <label for="trx-amount">Amount for receiving:</label>
                     <input type="number" id="trx-amount">
                     <p>Exchange rate: 0.1333 USDT = 1 TRX</p>
-                    <p>Reserve: 7,416,805 TRX</p>
+                    <p>Reserve: 256,942 TRX</p>
                 </div>
             </div>
-            <div class="description-block">
-                <p>ⓘ By proceeding, you will be directed to the exchange menu. Please follow the instructions provided on the next page.</p>
-            </div>
-            <!-- Exchange Button -->
-            <a href="#" class="btn exchange-btn"  onclick="startExchange()">Start Exchange</a>
+            <hr>
+            <p>ⓘ By proceeding, you will be directed to the exchange menu. Please follow the instructions provided on the next page.</p>
+            <a href="#" class="btn exchange-btn"  onclick="startExchange()">Continue Exchange</a>
+            
         </div>
     </main>
 

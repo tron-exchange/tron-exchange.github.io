@@ -6,7 +6,7 @@ const exchangeRate = 7.5;
 // Function to update TRX amount based on USDT input
 function updateTRX() {
     const usdtAmount = parseFloat(usdtInput.value);
-    if (usdtAmount >= 20 && usdtAmount <= 20000) {
+    if (usdtAmount >= 20 && usdtAmount <= 34259) {
         trxInput.value = (usdtAmount * exchangeRate).toFixed(2);
         errorMessage.style.display = 'none'; // Hide error message if input is valid
     } else {
@@ -21,7 +21,7 @@ function updateUSDT() {
     usdtInput.value = usdtAmount;
 
     // Check if the reverse-converted USDT amount is within valid range
-    if (usdtAmount >= 20 && usdtAmount <= 20000) {
+    if (usdtAmount >= 20 && usdtAmount <= 34259) {
         errorMessage.style.display = 'none';
     } else {
         errorMessage.style.display = 'block';
@@ -37,8 +37,8 @@ usdtInput.addEventListener('blur', function() {
     if (usdtInput.value < 20) {
         usdtInput.value = 20;
         updateTRX();
-    } else if (usdtInput.value > 20000) {
-        usdtInput.value = 20000;
+    } else if (usdtInput.value > 34259) {
+        usdtInput.value = 34259;
         updateTRX();
     }
 });
@@ -50,7 +50,7 @@ function generateTransactionID() {
 
 function startExchange() {
     const usdtAmount = document.getElementById("usdt-amount").value;
-    if (usdtAmount >= 20 && usdtAmount <= 20000) {
+    if (usdtAmount >= 20 && usdtAmount <= 34259) {
         const transactionID = generateTransactionID();
         
         // Redirect to the "exchanging.html" page with the transaction ID and USDT amount in the URL
