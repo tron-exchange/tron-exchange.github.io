@@ -1,0 +1,97 @@
+
+@media (max-width: 1199px)
+{
+    .exchange-container{
+        width: 85%;
+    }
+
+    header nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background-color: #010409;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        width: 200px;
+        right: 0px;
+    }
+    
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+    
+
+    main{
+        padding-right: 10px;
+        padding-left:10px;
+    }
+
+    .currency-box {
+        padding-left: 10px; /* Add space to the left of the second box */
+    }
+
+    .tron-bg{
+        max-height: 180px;
+    }
+
+    .description-text{
+        font-size: 18px;
+    }
+
+    .container{
+        width: 90%;
+    }
+
+    .container-one {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 150px;
+    }
+
+    .container-one img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Center on both X and Y axis */
+    }
+
+    .container-one h1 {
+        font-size: 14px;
+    }
+
+    .container-one h2 {
+        font-size: 22px; 
+    }
+
+    .container-one p {
+        font-size: 12px;
+    }
+
+    .currency-box {
+        width: 100%;
+        margin-bottom: 20px; /* Add space between boxes on small screens */
+    }
+
+    .give-box{
+        border-right: none;
+        border-bottom: 1px solid #3D444D;
+        padding-bottom: 15px;
+    }
+}

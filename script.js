@@ -69,3 +69,91 @@ function toggleAnswer(id) {
     }
 }
 
+// Base of random names
+const names = [
+    "Subhan", "Muazzam", "N1", "Alex", "Sarah", "JohnDoe", "Jane", "Chris", 
+    "Fatima", "James", "Lily", "Tommy", "Zara", "Ravi", "Sophia", "Jack",
+    "Olivia", "Leo", "Ayesha", "Nick", "Emily", "Ahmed", "Sasha", "Mark"
+  ];
+
+  // Base of random comments
+  const comments = [
+    "Thank good site.", "Good experience, amazing services.", 
+    "Very fast service.", "Highly recommend!", "Smooth and easy to use.",
+    "Exceptional quality.", "Simple and effective.", "A must try!", 
+    "Great design and functionality.", "Quick and reliable!"
+  ];
+
+  // Function to generate random reviews
+  function generateReviews(numReviews) {
+    const reviewsContainer = document.getElementById('reviews');
+    let currentDate = new Date();
+    
+    for (let i = 0; i < numReviews; i++) {
+      // Randomize name and comment
+      const name = names[Math.floor(Math.random() * names.length)];
+      const comment = comments[Math.floor(Math.random() * comments.length)];
+      
+      // Subtract 1-30 minutes for each previous review
+      currentDate.setMinutes(currentDate.getMinutes() - Math.floor(Math.random() * 30));
+      
+      // Format date and time
+      const day = String(currentDate.getDate()).padStart(2, '0');
+      const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+      const year = currentDate.getFullYear();
+      const hours = String(currentDate.getHours()).padStart(2, '0');
+      const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+      const formattedDate = `${day}.${month}.${year}, ${hours}:${minutes}`;
+
+      // Create review element
+      const reviewBox = document.createElement('div');
+      reviewBox.classList.add('box');
+      reviewBox.innerHTML = `
+        <label class="quotes">"${comment}"</label>
+        <p>${name}, ${formattedDate}</p>
+      `;
+      
+      // Add to container
+      reviewsContainer.appendChild(reviewBox);
+    }
+  }
+
+  // Generate 5 random reviews
+  generateReviews(5);
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll("header nav a");
+  
+    navLinks.forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default anchor behavior
+  
+        // Get the href attribute (the section id to scroll to)
+        const sectionID = this.getAttribute("href").replace('.html', '');
+        const section = document.querySelector(sectionID);
+  
+        // Scroll to the section smoothly
+        if (section) {
+          window.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+  
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    var navMenu = document.getElementById("nav-menu");
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
+    } else {
+        navMenu.style.display = "flex";
+    }
+});
+
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active'); // Toggles the visibility of the navigation links
+});
+
