@@ -153,7 +153,14 @@ const names = [
 });
 
 document.getElementById('menu-toggle').addEventListener('click', function() {
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('active'); // Toggles the visibility of the navigation links
+  const nav = document.querySelector('nav');
+  nav.classList.toggle('active'); // Toggles the visibility of the navigation links
 });
 
+// Simulate menu toggle when a link is clicked
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+      document.getElementById('menu-toggle').click(); // Simulates a click on the menu toggle
+  });
+});
