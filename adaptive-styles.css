@@ -4,6 +4,7 @@
         width: 85%;
     }
 
+
     header nav {
         display: none;
         flex-direction: column;
@@ -30,11 +31,6 @@
         background-color: #fff;
         margin: 5px 0;
         transition: 0.4s;
-    }
-
-    main{
-        padding-right: 10px;
-        padding-left:10px;
     }
 
     .currency-box {
@@ -69,31 +65,8 @@
         transform: translate(-50%, -50%); /* Center the image */
     }
 
-    .container-one h2, .container-one p {
-        margin: 0; /* Remove any margin that may cause spacing issues */
-    }
 
     
-    .container-one h2 {
-        font-size: 22px;
-        margin-bottom: 10px;
-        word-wrap: break-word;
-        padding: 0 10px;
-    }
-    
-    .container-one p {
-        font-size: 12px;
-        width: 90%; /* Narrower width */
-        max-width: 500px; /* Max width for wider screens */
-        word-wrap: break-word;
-        text-align: center;
-        margin: 0 auto;
-        padding: 10px 0;
-        box-sizing: border-box;
-        line-height: 1.4; /* Better readability */
-    }
-    
-
     .currency-box {
         width: 100%;
         margin-bottom: 20px; /* Add space between boxes on small screens */

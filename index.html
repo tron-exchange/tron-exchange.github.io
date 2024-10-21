@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>GitHub | TRON Exchange </title>
+      <title>GitHub | TRON Exchange</title>
       <meta name="description" content="TRON Exchange - a fast, secure, and user-friendly platform for converting USDT to TRX with 24/7 availability and privacy-focused services.">
       <!-- Favicon -->
       <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -40,7 +40,7 @@
      
       <!-- Main Content -->
       <main>
-         <div class="container-one">
+         <section class="container-one">
             <div class="big-text-box">
                <h2>Reliable <span style="color:#FF0013">24/7</span> Crypto Exchanges</h2>
                <p class="description-text">Welcome to TRON Exchange! We offer secure, fast, and privacy-centric services to exchange Tether USDT to TRON TRX. Whether you're converting for trading or personal use, we ensure a seamless experience with highly competitive rates and real-time processing.</p>
@@ -48,11 +48,11 @@
             <div>
                <img src="/tron-bg.png" alt="Tron Background" class="tron-bg">
             </div>
-         </div>
+         </section>
+         
          <!-- Exchange Section -->
-         <div id="exchange" class="container exchange-container" >
+         <section id="exchange" class="container exchange-container">
             <div class="exchange-section">
-               <!-- You Give Section -->
                <div class="currency-box give-box">
                   <label for="usdt-amount">You Send</label>
                   <div class="currency-select">
@@ -61,12 +61,11 @@
                         <option value="usdt-trc">Tether USDT</option>
                      </select>
                   </div>
-                  <label for="trx-amount">Amount for sending:</label>
+                  <label for="usdt-amount">Amount for sending:</label>
                   <input type="number" id="usdt-amount" min="20" max="34259">
-                  <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 34,259  USDT</p>
+                  <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 34,259 USDT</p>
                   <p>Exchange rate: 1 USDT = 7.5 TRX</p>
                </div>
-               <!-- You Get Section -->
                <div class="currency-box">
                   <label for="trx-amount">You Receive</label>
                   <div class="currency-select">
@@ -83,16 +82,19 @@
             </div>
             <hr>
             <p>ⓘ You will be directed to the exchange menu. Follow the instructions provided on the next page.</p>
-            <a href="#" class="btn exchange-btn"  onclick="startExchange()">Continue Exchange</a>
-         </div>
-         <div  id="rules" class="container">
+            <a href="#" class="btn exchange-btn" onclick="startExchange()">Continue Exchange</a>
+         </section>
+         
+         <!-- Rules Section -->
+         <section id="rules" class="container">
             <h2>Rules</h2>
             <p class="description-text">With Tron Exchange, you exchange USDT to TRX at the fixed exchange rate. We do not charge our users any extra fees or interest for our exchange services. Transactions are completed quickly and usually take about 5-10 minutes.</p>
             <p class="description-text">After you enter the amount of funds you want to exchange and enter the recipient's cryptocurrency wallet address, our service will provide you with an address to transfer the specified amount USDT. TRX will be transferred immediately after we receive your USDT.</p>
-         </div>
+         </section>
+         
          <!-- FAQ Section -->
-<div  id="faq"  class="container faq-container">
-   <h2>Frequently Asked Questions</h2>
+         <section id="faq" class="container faq-container">
+            <h2>Frequently Asked Questions</h2>
    <div class="faq-item">
       <div class="faq-question">
          <p>What is TRON Exchange?</p>
@@ -173,15 +175,16 @@
          <p>The connection with the web site is made by the protocol https be means of encrypted transfer mechanisms SSL, the service itself also has encryption that excludes the possibility of data theft. As to the credibility to the service you have to take into account  our positive feedbacks on forums, expensive and unique technical outfit of the web site as well as the work of our professional support that is always ready to help the client.</p>
       </div>
    </div>
-</div>
+         </section>
 
-         <div id="reviews"  class="container">
-            <div class="reviews">
-              <h2>Latest Reviews</h2>
-              <div id="reviews"></div>
-            </div>
-          </div>
-         <div id="contact" class="container contact-box">
+         <!-- Reviews Section -->
+         <section id="reviews" class="container">
+            <h2>Latest Reviews</h2>
+            <div id="reviews"></div>
+         </section>
+
+         <!-- Contact Section -->
+         <section id="contact" class="container contact-box">
             <h2>Contacts</h2>
             <p>If you have any questions, feel free to reach out!</p>
             <div class="contact-info">
@@ -191,8 +194,9 @@
                   <p>Working hours: Mon-Sun from 10:00 am-11:00pm UTC -7</p>
                </div>
             </div>
-         </div>
+         </section>
       </main>
+
       <!-- Footer -->
       <footer>
          <div class="container">
@@ -204,7 +208,8 @@
             </nav>
          </div>
       </footer>
-      <!-- Link the external JavaScript file -->
+      
+      <!-- JavaScript -->
       <script src="script.js"></script>
    </body>
 </html>

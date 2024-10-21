@@ -88,7 +88,7 @@ h2 {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 8px;
-    margin-top: 10px;
+    margin: 0px;
 }
 .container-one{
     border-bottom: #3D444D 1px solid;
@@ -115,17 +115,18 @@ footer {
     padding: 20px;
     border: 1px solid #3D444D;
     flex-shrink: 0;}
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-    width: 100%;}
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%;
+    }
 .exchange-container {
     padding: 20px;
     border-radius: 10px;
     background-color: #0D1117;
     border: 1px solid #3D444D;
-    margin-top: 40px;}
+    margin-top: 20px;}
 .exchange-section {
     display: flex;
     justify-content: space-between;
@@ -156,14 +157,6 @@ p{
     font-size: inherit;
     color: #9198A1;
     margin: 0px 0;}
-.swap-icon {
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;}
-.swap-icon img {
-    width: 30px;
-    height: 30px;}
 .submit-btn,
     .btn.exchange-btn {
     display: inline-block;
@@ -313,8 +306,6 @@ input[type="text"]:hover,
     visibility: visible;
     opacity: 1;}
 .faq-container {
-    margin-top: 30px;
-    padding: 20px;
     background-color: #0D1117;
     border: 1px solid #3D444D;
     border-radius: 10px;
@@ -322,7 +313,7 @@ input[type="text"]:hover,
 .faq-item {
     margin-bottom: 20px;
     font-size: 15px;
-    margin-top: 20px;}
+    margin-top: 10px;}
 .faq-question {
     display: flex;
     justify-content: space-between;
@@ -352,11 +343,10 @@ input[type="text"]:hover,
     font-style: italic;
     font-size: 20px;}
 .contact-box {
-    padding: 20px;
     background-color: #0D1117;
     border: 1px solid #3D444D;
     border-radius: 10px;
-    margin-top: 40px;}
+margin-bottom: 20px;}
 .contact-info {
     margin-top: 20px;}
 .contact-item {
