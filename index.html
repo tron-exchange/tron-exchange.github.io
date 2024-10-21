@@ -65,6 +65,7 @@
                   <input type="number" id="usdt-amount" min="20" max="34259">
                   <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 34,259 USDT</p>
                   <p>Exchange rate: 1 USDT = 7.5 TRX</p>
+                  
                </div>
                <div class="currency-box">
                   <label for="trx-amount">You Receive</label>
@@ -77,11 +78,16 @@
                   <label for="trx-amount">Amount for sending:</label>
                   <input type="number" id="trx-amount">
                   <p>Exchange rate: 0.1333 USDT = 1 TRX</p>
-                  <p>Reserve: 256,942 TRX</p>
+                      <p>Reserve: 256,942 TRX</p>
+                  <label for="usdt-amount">Email:</label>
+                  <input type="number" id="usdt-amount" min="20" max="34259">
+                  <label for="usdt-amount">Email:</label>
+                  <input type="number" id="usdt-amount" min="20" max="34259">
+                  
                </div>
             </div>
             <hr>
-            <p>ⓘ You will be directed to the exchange menu. Follow the instructions provided on the next page.</p>
+            <p class="can-hide">ⓘ You will be directed to the exchange menu. Follow the instructions provided on the next page.</p>
             <a href="#" class="btn exchange-btn" onclick="startExchange()">Continue Exchange</a>
          </section>
          
@@ -202,9 +208,8 @@
          <div class="container">
             <p class="footer-text"><img class="img-footer" src="/favicon.png">© 2024 TRON Exchange by GitHub, Inc.</p>
             <nav>
-               <a href="privacy.html">Privacy Policy</a>
-               <a href="terms.html">Terms of Service</a>
-               <a href="support.html">Support</a>
+               <a href="#rules">Privacy Policy</a>
+               <a href="mailto:example@example.com">Support</a>
             </nav>
          </div>
       </footer>

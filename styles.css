@@ -115,7 +115,7 @@ footer {
     padding: 20px;
     border: 1px solid #3D444D;
     flex-shrink: 0;}
-    .container {
+.container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
