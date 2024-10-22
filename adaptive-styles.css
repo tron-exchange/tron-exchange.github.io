@@ -79,4 +79,12 @@
         margin-bottom: 20px; /* Add space between boxes on small screens */
     }
 
+    .input-box-l{
+        padding-left: 10px;
+    }
+
+    .input-box-l input{
+        width: 100%;
+    }
+
 }

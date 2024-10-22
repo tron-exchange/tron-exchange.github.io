@@ -131,7 +131,6 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 20px;
     flex-wrap: wrap;}
 .currency-box {
     width: 46%;
@@ -364,3 +363,7 @@ margin-bottom: 20px;}
     text-decoration: none;}
 .contact-item a:hover {
     text-decoration: underline;}
+
+    .input-box-l{
+        padding-left: 20px;
+    }
