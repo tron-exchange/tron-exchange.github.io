@@ -1,90 +1,105 @@
-@media (max-width: 1199px)
-{
-    .exchange-container{
-        width: 85%;
-    }
+@media (max-width:1199px) {
+	.exchange-container {
+		width: 85%
+	}
 
-    #exchange hr {
-        display: none;
-    }
-    
-    .can-hide{
-        display: none;
-    }
+	#exchange hr {
+		display: none
+	}
 
-    header nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        background-color: #010409;
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        width: auto;
-        text-align: right;
-        right: 0px;
-    }
-    
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        position: relative;
-    }
+	.can-hide {
+		display: none
+	}
 
-    .menu-toggle div {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px 0;
-        transition: 0.4s;
-    }
+	header nav {
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		top: 60px;
+		background-color: #010409;
+		width: 100%;
+		padding: 10px;
+		border-radius: 8px;
+		width: auto;
+		text-align: right;
+		right: 0
+	}
 
-    .currency-box {
-        padding-left: 10px; /* Add space to the left of the second box */
-    }
+	.menu-toggle {
+		display: block;
+		cursor: pointer;
+		position: relative
+	}
 
-    .tron-bg{
-        display: none;
-    }
+	.menu-toggle div {
+		width: 25px;
+		height: 3px;
+		background-color: #fff;
+		margin: 5px 0;
+		transition: .4s
+	}
 
-    .description-text{
-        font-size: 18px;
-    }
+	.currency-box {
+		padding-left: 10px
+	}
 
-    .container{
-        width: 90%;
-    }
+	.tron-bg {
+		display: none
+	}
 
-    .container-one {
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        box-sizing: border-box;
-        height: auto;
-    }
+	.description-text {
+		font-size: 18px
+	}
 
-    .container-one img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); /* Center the image */
-    }
+	.container {
+		width: 90%
+	}
 
+	.container-one {
+		width: 100%;
+		align-items: center;
+		text-align: center;
+		padding: 20px;
+		box-sizing: border-box;
+		height: auto
+	}
 
-    
-    .currency-box {
-        width: 100%;
-        margin-bottom: 20px; /* Add space between boxes on small screens */
-    }
+	.container-one img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%)
+	}
 
-    .input-box-l{
-        padding-left: 10px;
-    }
+	.input-box-l a {
+		font-size: 16px
+	}
 
-    .input-box-l input{
-        width: 100%;
-    }
+	.inputs {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 15px
+	}
 
+	.inputs div {
+		display: flex;
+		align-items: center
+	}
+
+	.inputs label {
+		margin-left: 8px
+	}
+
+	.currency-box {
+		width: 100%;
+		margin-bottom: 20px
+	}
+
+	.input-box-l {
+		padding-left: 10px
+	}
+
+	.input-box-l input {
+		width: auto
+	}
 }
