@@ -53,7 +53,7 @@
                      </select>
                   </div>
                   <label for="usdt-amount">Amount for sending:</label>
-                  <input type="number" id="usdt-amount" min="20" max="34259">
+                  <input type="    number" id="usdt-amount" min="20" max="34259">
                   <p id="error-message" style="color: red; display: none;">Amount must be between 20 and 34,259 USDT</p>
                   <p>Exchange rate: 1 USDT = 7.5 TRX</p>
                </div>
@@ -78,15 +78,15 @@
                   <div class="inputs">
                      <div>
                         <input type="checkbox" id="accept-rules" required>
-                        <label for="accept-rules">I accept the <a href="#">Rules</a></label>
+                        <label for="accept-rules"><span class="color-grey-label">I accept the </span><a href="#">Rules</a></label>
                      </div>
                      <div>
                         <input type="checkbox" id="accept-privacy-policy" required>
-                        <label for="accept-privacy-policy">I accept the <a href="#">Privacy Policy</a></label>
+                        <label for="accept-privacy-policy"><span class="color-grey-label">I accept the </span><a href="#">Privacy Policy</a></label>
                      </div>
                      <div>
                         <input type="checkbox" id="do-not-save-data" required>
-                        <label for="do-not-save-data">Do not save my data</label>
+                        <label for="do-not-save-data"><span class="color-grey-label">Do not save my data</span></label>
                      </div>
                   </div>
                </div>
@@ -184,10 +184,20 @@
                </div>
             </div>
          </section>
-         <section id="reviews" class="container">
-            <h2>Latest Reviews</h2>
-            <div id="reviews"></div>
-         </section>
+         <div class="review-section">
+            <h2>Customer Reviews</h2>
+            <div class="review-carousel" id="carousel">
+               <div id="reviews"></div>
+               <div id="reviews"></div>
+               <div id="reviews"></div>
+            </div>
+            <button id="prev-btn">Prev</button>
+            <button id="next-btn">Next</button>
+          </div>
+          
+
+         <h2>Latest Reviews</h2>
+            
          <section id="contact" class="container contact-box">
             <h2>Contacts</h2>
             <p>If you have any questions, feel free to reach out!</p>

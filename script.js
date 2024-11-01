@@ -164,3 +164,79 @@ navLinks.forEach(link => {
       document.getElementById('menu-toggle').click(); // Simulates a click on the menu toggle
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('carousel');
+  const reviews = [
+    { comment: "Great product!", date: "Posted on: 2024-10-30" },
+    { comment: "Fast shipping.", date: "Posted on: 2024-10-29" },
+    { comment: "Amazing quality!", date: "Posted on: 2024-10-28" },
+    { comment: "Would buy again.", date: "Posted on: 2024-10-27" },
+    { comment: "Highly recommend.", date: "Posted on: 2024-10-26" }
+  ];
+
+  let currentIndex = 0;
+  let autoScrollInterval;
+
+  // Function to create a review box
+  function createReviewBox(review) {
+    const box = document.createElement('div');
+    box.classList.add('review-box');
+    box.innerHTML = `
+      <div class="comment">${review.comment}</div>
+      <hr />
+      <div class="info">${review.date}</div>
+    `;
+    return box;
+  }
+
+  // Function to update carousel with next review
+  function updateCarousel(direction = 'next') {
+    const allBoxes = document.querySelectorAll('.review-box');
+    allBoxes.forEach(box => {
+      box.style.opacity = '0';
+    });
+
+    // Calculate the next index based on direction
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % reviews.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+    }
+
+    const review = reviews[currentIndex];
+    const newBox = createReviewBox(review);
+    carousel.innerHTML = ''; // Clear the old content
+    carousel.appendChild(newBox);
+
+    // Apply animation to the new review box
+    setTimeout(() => {
+      newBox.style.transform = 'translateX(-300%)'; // Move in from the right
+      newBox.style.opacity = '1';
+      newBox.style.transform = 'translateX(0)'; // Move to left
+    }, 50);
+  }
+
+  // Manual scrolling buttons
+  document.getElementById('prev-btn').addEventListener('click', () => updateCarousel('prev'));
+  document.getElementById('next-btn').addEventListener('click', () => updateCarousel('next'));
+
+  // Auto-scroll functionality
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      updateCarousel('next');
+    }, 3000); // Scroll every 3 seconds
+  }
+
+  // Stop auto-scroll on manual interaction
+  function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+  }
+
+  carousel.addEventListener('mouseenter', stopAutoScroll);
+  carousel.addEventListener('mouseleave', startAutoScroll);
+
+  // Initial render and start auto-scroll
+  updateCarousel();
+  startAutoScroll();
+});

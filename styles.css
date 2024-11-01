@@ -105,7 +105,7 @@ h2 {
 }
 
 .description-text {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 400;
 	color: #9198a1;
 	margin-top: 0
@@ -216,7 +216,7 @@ p {
 	width: 100%;
 	padding: 1px 12px;
 	height: 35px;
-	font-size: 15px;
+	font-size: 16px;
 	margin-top: 10px;
 	margin-bottom: 5px;
 	border: 1px solid #3d444d;
@@ -237,7 +237,7 @@ select {
 
 .currency-select select {
 	padding: 0 5px;
-	font-size: 14px
+	font-size: 16px
 }
 
 select::after {
@@ -284,11 +284,17 @@ hr {
 
 a {
 	color: #4493f8;
-	font-size: 12px
+	font-size: 16px
+}
+
+.checkbox-style{
+background-color: #0366d6;
+color: #0366d6;
+
 }
 
 .footer-text {
-	font-size: 12px;
+	font-size: 16px;
 	align-items: center
 }
 
@@ -350,7 +356,7 @@ select:hover {
 
 .faq-item {
 	margin-bottom: 20px;
-	font-size: 15px;
+	font-size: 16px;
 	margin-top: 10px
 }
 
@@ -384,6 +390,8 @@ select:hover {
 	display: grid
 }
 
+
+
 .box {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -407,7 +415,7 @@ select:hover {
 }
 
 .contact-item h3 {
-	font-size: 18px;
+	font-size: 16px;
 	margin: 0
 }
 
@@ -430,3 +438,104 @@ select:hover {
 .input-box-l {
 	padding-left: 20px
 }
+
+/* Prevent checkboxes from moving */
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus {
+    outline: none; /* Prevent additional outlines */
+}
+
+/* Fix email and TRX address inputs movement on hover */
+input[type="email"],
+input[type="text"] {
+    border: 1px solid #3d444d;
+    padding: 8px 12px;
+    background-color: #0d1117;
+    color: #f0f6fc;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+input[type="email"]:hover,
+input[type="text"]:hover,
+input[type="email"]:focus,
+input[type="text"]:focus {
+    border: 1px solid #0366d6; /* Color change, but no size change */
+    outline: none;
+    padding: 8px 12px; /* Keep padding consistent */
+}
+
+
+.color-grey-label {
+    color: #9198a1;
+}
+
+.review-section {
+	text-align: center;
+	margin: 50px auto;
+	width: 80%;
+	max-width: 600px;
+  }
+  
+  .review-section h2 {
+	text-align: center;
+  }
+  
+  .review-carousel {
+	display: flex;
+	overflow: hidden;
+	position: relative;
+	width: 300px; /* Adjust as needed */
+	height: 60px;  /* Enough space to hold 50px boxes */
+	margin: 20px auto;
+	justify-content: space-between;
+  }
+  
+  .review-box {
+	width: 100px;
+	height: 50px;
+	background-color: lightgray;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	opacity: 0; /* Initially hidden */
+	transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .review-box hr {
+	border: none;
+	border-top: 1px solid #999;
+	margin: 0;
+  }
+  
+  .review-box .comment {
+	font-size: 12px;
+  }
+  
+  .review-box .info {
+	font-size: 10px;
+	color: #666;
+  }
+  
+  /* Buttons for manual navigation */
+  #prev-btn, #next-btn {
+	margin: 10px;
+	padding: 5px 10px;
+	cursor: pointer;
+  }
+  
