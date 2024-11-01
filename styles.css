@@ -479,63 +479,60 @@ input[type="text"]:focus {
 .color-grey-label {
     color: #9198a1;
 }
+/* Reviews container */
+#reviews {
+    text-align: center;
+    padding: 20px;
+}
 
-.review-section {
-	text-align: center;
-	margin: 50px auto;
-	width: 80%;
-	max-width: 600px;
-  }
-  
-  .review-section h2 {
-	text-align: center;
-  }
-  
-  .review-carousel {
-	display: flex;
-	overflow: hidden;
-	position: relative;
-	width: 300px; /* Adjust as needed */
-	height: 60px;  /* Enough space to hold 50px boxes */
-	margin: 20px auto;
-	justify-content: space-between;
-  }
-  
-  .review-box {
-	width: 100px;
-	height: 50px;
-	background-color: lightgray;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	text-align: center;
-	padding: 5px;
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	opacity: 0; /* Initially hidden */
-	transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
-  }
-  
-  .review-box hr {
-	border: none;
-	border-top: 1px solid #999;
-	margin: 0;
-  }
-  
-  .review-box .comment {
-	font-size: 12px;
-  }
-  
-  .review-box .info {
-	font-size: 10px;
-	color: #666;
-  }
-  
-  /* Buttons for manual navigation */
-  #prev-btn, #next-btn {
-	margin: 10px;
-	padding: 5px 10px;
-	cursor: pointer;
-  }
-  
+/* Add some spacing to the header */
+#reviews h2 {
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+/* Reviews section using grid layout */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+}
+
+/* Styling each review box */
+.review-box {
+    background-color: #0d1117;
+    border: 1px solid #3d444d;
+    border-radius: 8px;
+    padding: 20px;
+    color: #f0f6fc;
+    font-size: 14px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Add hover effect to review boxes */
+.review-box:hover {
+    transform: scale(1.05);
+}
+
+/* Styling for quotes */
+.review-box .quotes {
+    font-style: italic;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Horizontal line (hr) */
+.review-box hr {
+    border: none;
+    height: 1px;
+    background-color: #3d444d;
+    margin: 10px 0;
+}
+
+/* Styling for review details like name and date */
+.review-box p {
+    font-size: 12px;
+    color: #9198a1;
+    margin: 0;
+}
