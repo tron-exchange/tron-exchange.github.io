@@ -71,7 +71,9 @@
 		transform: translate(-50%, -50%)
 	}
 
-	
+	.reviewss {
+        grid-template-columns: 1fr; /* Switch to 1 column */
+    }
 
 	.inputs {
 		display: grid;

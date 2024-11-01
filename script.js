@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Generates random reviews
+// Generates random reviews
 function generateReviews(numReviews) {
-  const reviewsContainer = document.getElementById('reviews');
+  const reviewsContainer = document.querySelector('.reviewss');
   let currentDate = new Date();
   
   for (let i = 0; i < numReviews; i++) {
@@ -38,18 +39,13 @@ function generateReviews(numReviews) {
       const minutes = String(currentDate.getMinutes()).padStart(2, '0');
       const formattedDate = `${day}.${month}.${year}, ${hours}:${minutes}`;
 
-      // Create the review box and apply class
       const reviewBox = document.createElement('div');
-      reviewBox.classList.add('review-box');  // Update the class to 'review-box'
-
-      // Add content inside the review box
+      reviewBox.classList.add('box');
       reviewBox.innerHTML = `
           <label class="quotes">"${comment}"</label>
-          <hr>
           <p>${name}, ${formattedDate}</p>
       `;
 
-      // Append the review box to the container
       reviewsContainer.appendChild(reviewBox);
   }
 }
@@ -153,4 +149,4 @@ const comments = [
 ];
 
 // Generate 5 random reviews
-generateReviews(5);
+generateReviews(6);
