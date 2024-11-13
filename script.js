@@ -187,3 +187,87 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.getElementById('start-exchange').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default button behavior
+    startExchange();
+});
+
+function startExchange() {
+    if (validateForm()) {
+        window.location.href = 'approval.html';
+    }
+}
+
+function validateForm() {
+    const usdtInput = document.getElementById('usdtAmount');
+    const trxInput = document.getElementById('trx-amount');
+    const emailInput = document.getElementById('email');
+    const walletInput = document.getElementById('trx-address');
+    const checkbox1 = document.getElementById('accept-rules');
+    const checkbox2 = document.getElementById('accept-privacy-policy');
+    
+    // Reset previous highlights
+    resetHighlights([usdtInput, trxInput, emailInput, walletInput, checkbox1, checkbox2]);
+
+    const usdtAmount = parseFloat(usdtInput.value);
+    const trxAmount = parseFloat(trxInput.value);
+
+    // Validate USDT input (check if within range)
+    if (isNaN(usdtAmount) || usdtAmount < minSum || usdtAmount > maxSum) {
+        highlightField(usdtInput);
+        return false;
+    }
+
+    // Validate TRX input (check if corresponding TRX value is correct)
+    if (isNaN(trxAmount) || trxAmount < minSum * exchangeRate || trxAmount > maxSum * exchangeRate) {
+        highlightField(trxInput);
+        return false;
+    }
+
+    // Validate email format
+    if (!validateEmail(emailInput.value)) {
+        highlightField(emailInput);
+        return false;
+    }
+
+    // Validate TRON wallet (32 characters, only letters and numbers)
+    if (!validateTronWallet(walletInput.value)) {
+        highlightField(walletInput);
+        return false;
+    }
+
+    // Check if the two required checkboxes are checked
+    if (!checkbox1.checked || !checkbox2.checked) {
+        highlightField(checkbox1);
+        highlightField(checkbox2);
+        return false;
+    }
+
+    // All validations passed
+    return true;
+}
+
+function highlightField(field) {
+    field.style.color = 'red';  // Highlight with yellow background
+    field.style.boxShadow = '0 0 5px 1px red';  // Red shadow around the field
+}
+
+
+function resetHighlights(fields) {
+    fields.forEach(field => {
+        field.style.backgroundColor = '';
+    });
+}
+
+// Helper function to validate email format using regex
+function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
+// Helper function to validate TRON wallet (32 characters, only letters and numbers)
+function validateTronWallet(wallet) {
+    const walletPattern = /^[A-Za-z0-9]{32}$/;
+    return walletPattern.test(wallet);
+}
