@@ -286,7 +286,6 @@ transition: border-color 0.2s ease;
 }
 input[type="checkbox"]:checked {
 background-color: #151B23;
-border-color: #151B23;
 }
 input[type="checkbox"]:checked::after {
 content: '✔';

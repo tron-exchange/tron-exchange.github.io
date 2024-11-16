@@ -160,62 +160,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.getElementById('exchange-btn').addEventListener('click', function (event) {
-    event.preventDefault();
-    if (validateForm()) {
-        startExchange();
-    }
-});
 
 
-function startExchange() {
-    window.location.href = 'approval.html';
-}
 
-function validateForm() {
-    const usdtInput = document.getElementById('usdtAmount');
-    const trxInput = document.getElementById('trx-amount');
-    const emailInput = document.getElementById('email');
-    const walletInput = document.getElementById('trx-address');
-    const checkbox1 = document.getElementById('accept-rules');
-    const checkbox2 = document.getElementById('accept-privacy-policy');
 
-    resetHighlights([usdtInput, trxInput, emailInput, walletInput, checkbox1, checkbox2]);
 
-    const usdtAmount = parseFloat(usdtInput.value) || 0;
-    const trxAmount = parseFloat(trxInput.value) || 0;
-
-    if (isNaN(usdtAmount) || usdtAmount < minSum || usdtAmount > maxSum) {
-        highlightField(usdtInput);
-        return false;
-    }
-
-    if (isNaN(trxAmount) || trxAmount < minSum * exchangeRate || trxAmount > maxSum * exchangeRate) {
-        highlightField(trxInput);
-        return false;
-    }
-
-    if (!validateEmail(emailInput.value)) {
-        highlightField(emailInput);
-        return false;
-    }
-
-    if (!validateTronWallet(walletInput.value)) {
-        highlightField(walletInput);
-        return false;
-    }
-
-    if (!checkbox1.checked || !checkbox2.checked) {
-        highlightField(checkbox1);
-        highlightField(checkbox2);
-        return false;
-    }
-
-    return true;
-}
 
 function highlightField(field) {
-    field.style.boxShadow = '0 0 10px 2px red'; // Add shadow without !important
+    if (field.type === 'checkbox') {
+        field.style.boxShadow = '0 0 10px 2px red'; // Apply shadow for unchecked checkboxes
+    } else {
+        field.style.boxShadow = '0 0 10px 2px red'; // Apply shadow for invalid fields
+    }
 }
 
 // Example usage
@@ -241,18 +197,107 @@ trxAddressInput.addEventListener('input', function() {
     }
 });
 
-function resetHighlights(fields) {
-    fields.forEach(field => {
-        field.style.border = '';  // Видаляємо підсвітку з усіх полів
-    });
-}
+
 
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function startExchange() {
+    window.location.href = 'approval.html';
+}
+
+
+function resetHighlights(fields) {
+    fields.forEach(field => {
+        field.style.border = '';  // Видаляємо підсвітку з усіх полів
+    });
+}
+
+document.getElementById('exchange-btn').addEventListener('click', function (event) {
+    event.preventDefault();
+    if (validateForm()) {
+        startExchange();
+    }
+});
+
 function validateTronWallet(wallet) {
     const walletPattern = /^[A-Za-z0-9]{32}$/;
     return walletPattern.test(wallet);
+}
+
+
+
+
+function validateForm() {
+    const usdtInput = document.getElementById('usdtAmount');
+    const trxInput = document.getElementById('trx-amount');
+    const emailInput = document.getElementById('email');
+    const walletInput = document.getElementById('trx-address');
+    const checkbox1 = document.getElementById('accept-rules');
+    const checkbox2 = document.getElementById('accept-privacy-policy');
+
+    resetHighlights([usdtInput, trxInput, emailInput, walletInput, checkbox1, checkbox2]);
+
+    const usdtAmount = parseFloat(usdtInput.value) || 0;
+    const trxAmount = parseFloat(trxInput.value) || 0;
+
+    if (isNaN(usdtAmount) || usdtAmount < minSum || usdtAmount > maxSum) {
+        highlightField(usdtInput);
+        
+        return false;
+    }
+    
+
+    if (isNaN(trxAmount) || trxAmount < minSum * exchangeRate || trxAmount > maxSum * exchangeRate) {
+        highlightField(trxInput);
+        return false;
+    }
+
+    
+
+    if (!validateEmail(emailInput.value)) {
+        highlightField(emailInput);
+        return false;
+    }
+
+    
+
+    if (!validateTronWallet(walletInput.value)) {
+        highlightField(walletInput);
+        return false;
+    }
+    
+    
+
+    // Add shadow to checkboxes if unchecked
+    if (!checkbox1.checked) {
+        highlightField(checkbox1);
+    }
+    if (!checkbox2.checked) {
+        highlightField(checkbox2);
+    }
+
+    if (!checkbox1.checked || !checkbox2.checked) {
+        return false;
+    }
+
+    return true;
 }
