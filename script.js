@@ -213,7 +213,15 @@ function startExchange() {
     window.location.href = 'approval.html';
 }
 
-  
+document.addEventListener("DOMContentLoaded", function () {
+    const usdtAmount = localStorage.getItem('usdtAmount');  // Get the value from localStorage
+    const resultUsdtLabel = document.getElementById('result-usdt');
+    
+    if (usdtAmount) {
+        resultUsdtLabel.textContent = `USDT Amount: ${usdtAmount}`;  // Set the text of the label
+    }
+});
+
 
 
 function resetHighlights(fields) {

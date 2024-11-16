@@ -46,7 +46,7 @@
                     <label>Give</label>
                     <div class="currency-select">
                         <img src="/tether.png" alt="Tether Icon" class="currency-icon">
-                       <label id="result-usdt"></label>
+                       <label id="result-usdt">00.000 USDT TRC20</label>
                        
                     
                     </div>
@@ -58,15 +58,26 @@
                     <label>Get</label>
                     <div class="currency-select">
                         <img src="/tron.png" alt="TRON Icon" class="currency-icon-two">
-                        <input type="number" id="trx-amount" name="trx-amount" step="0.01" placeholder="Enter amount in TRX">
+                       
+                        <label id="result-trx">00.000 TRX </label>
                     </div>
-                    <p class="exchange-rate-reverse"></p>
-                    <p class="reserve">Reserve: <span id="reserveAmount"></span></p>
+                    
+                    <p>TRX</p>
                 </div>
             </div>
             <div class="user-data-section">
                 <div class="input-box-l">
-                    
+                    <label>Tether TRC20</label>
+
+                   <!-- USDT Address Box with Copy Button -->
+    <div class="address-box">
+      <input type="text" id="usdt-address" value="TSXA1nNei6LWe4yL7dV8srH1MgUsMog6W7" readonly>
+      <button class="copy-btn" id="copy-btn">Copy</button>
+  </div>
+
+  <!-- QR Code Image -->
+  <img src="/qrcode.png" alt="QR Code" class="qr-code">
+
                      <button class="btn exchange-btn" id="exchange-btn">I Paid</button>
 
                  </div>

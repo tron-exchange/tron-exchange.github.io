@@ -567,4 +567,32 @@ border: 1px solid #3d444d;
 	}
   }
 
-  
+  .address-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.address-box input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 250px; /* Adjust width as needed */
+    margin-right: 10px;
+}
+
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.qr-code {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+}
