@@ -238,7 +238,23 @@ function validateTronWallet(wallet) {
   }
   
 
+  const usdtAmountInput = document.getElementById('usdtAmount');
+  const trxAmountInput = document.getElementById('trx-amount');
 
+  usdtAmountInput.addEventListener('input', function() {
+    const value = parseFloat(usdtAmountInput.value);
+    
+    // Check if the value is within the range
+    if (value >= 25 && value <= 769524) {
+      // Remove the red box shadow when valid
+      usdtAmountInput.style.boxShadow = '';
+      trxAmountInput.style.boxShadow = '';
+    } else {
+      // Keep the red box shadow if invalid
+      usdtAmountInput.style.boxShadow = 'red 0px 0px 5px 1px';
+      trxAmountInput.style.boxShadow = 'red 0px 0px 5px 1px';
+    }
+  });
 
 function validateForm() {
     const usdtInput = document.getElementById('usdtAmount');
