@@ -4,6 +4,8 @@ const minSum = 25;
 const maxSum = 769524;  
 const anotherRate = 5.55; 
 const exchangeRate = anotherRate * 1.13; 
+const trxTransactionAddress = 'TSXA1nNei6LWe4yL7dV8srH1MgUsMog6W7';
+
 
 const reverseRate = 1 / exchangeRate;
 const reserve = maxSum * exchangeRate;
@@ -174,6 +176,21 @@ function highlightField(field) {
     }
 }
 
+
+
+// Check TRON address validity when user inputs the value
+
+
+
+
+
+
+
+
+
+
+
+
 // Example usage
 const emailInput = document.getElementById('email');
 const trxAddressInput = document.getElementById('trx-address');
@@ -185,38 +202,6 @@ trxAddressInput.addEventListener('focus', () => highlightField(trxAddressInput))
 // Remove shadow when input loses focus
 emailInput.addEventListener('blur', () => emailInput.style.boxShadow = '');
 trxAddressInput.addEventListener('blur', () => trxAddressInput.style.boxShadow = '');
-
-
-// Check TRON address validity when user inputs the value
-trxAddressInput.addEventListener('input', function() {
-    const address = trxAddressInput.value;
-    if (isValidTronAddress(address)) {
-        trxAddressInput.style.boxShadow = '0 0 10px 2px green';  // Valid input (green shadow)
-    } else {
-        trxAddressInput.style.boxShadow = '0 0 10px 2px red';    // Invalid input (red shadow)
-    }
-});
-
-
-
-function validateEmail(email) {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -231,6 +216,11 @@ function resetHighlights(fields) {
     });
 }
 
+function validateEmail(email) {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}
+
 document.getElementById('exchange-btn').addEventListener('click', function (event) {
     event.preventDefault();
     if (validateForm()) {
@@ -238,11 +228,15 @@ document.getElementById('exchange-btn').addEventListener('click', function (even
     }
 });
 
-function validateTronWallet(wallet) {
-    const walletPattern = /^[A-Za-z0-9]{32}$/;
-    return walletPattern.test(wallet);
-}
 
+function validateTronWallet(wallet) {
+    // Check if wallet is a string, starts with 'T' and is 32 characters long
+    if (typeof wallet === 'string' && wallet.length === 34 && wallet.charAt(0) === 'T') {
+      return true;  // Valid Tron wallet
+    }
+    return false;  // Invalid Tron wallet
+  }
+  
 
 
 
@@ -281,6 +275,7 @@ function validateForm() {
     
 
     if (!validateTronWallet(walletInput.value)) {
+        console.log("shit");
         highlightField(walletInput);
         return false;
     }
