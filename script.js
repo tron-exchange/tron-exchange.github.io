@@ -10,9 +10,6 @@ const reserve = maxSum * exchangeRate;
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    usdtInput.value = '0.00'; 
-    trxInput.value = '0.00'; 
-
     document.querySelector('.min-sum').innerHTML = `Min. sum: ${minSum} USDT`;
     document.querySelector('.max-sum').innerHTML = `Max. sum: ${maxSum.toLocaleString()} USDT`;
     document.querySelector('.exchange-rate').innerHTML = `Exchange rate: 1 USDT = ${exchangeRate.toFixed(4)} TRX`;
@@ -234,6 +231,15 @@ emailInput.addEventListener('blur', () => emailInput.style.boxShadow = '');
 trxAddressInput.addEventListener('blur', () => trxAddressInput.style.boxShadow = '');
 
 
+// Check TRON address validity when user inputs the value
+trxAddressInput.addEventListener('input', function() {
+    const address = trxAddressInput.value;
+    if (isValidTronAddress(address)) {
+        trxAddressInput.style.boxShadow = '0 0 10px 2px green';  // Valid input (green shadow)
+    } else {
+        trxAddressInput.style.boxShadow = '0 0 10px 2px red';    // Invalid input (red shadow)
+    }
+});
 
 function resetHighlights(fields) {
     fields.forEach(field => {
