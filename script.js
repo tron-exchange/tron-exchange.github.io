@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function highlightField(field) {
     if (field.type === 'checkbox') {
-        field.style.boxShadow = '0 0 10px 2px red'; // Apply shadow for unchecked checkboxes
+        field.style.boxShadow = '0 0 5px 1px red'; // Apply shadow for unchecked checkboxes
     } else {
-        field.style.boxShadow = '0 0 10px 2px red'; // Apply shadow for invalid fields
+        field.style.boxShadow = '0 0 5px 1px red'; // Apply shadow for invalid fields
     }
 }
 
