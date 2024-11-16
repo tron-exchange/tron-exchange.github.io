@@ -206,8 +206,14 @@ trxAddressInput.addEventListener('blur', () => trxAddressInput.style.boxShadow =
 
 
 function startExchange() {
+    const usdtInput = document.getElementById('usdtAmount');
+    localStorage.setItem('usdtAmount', usdtInput.value);  // Save the value to localStorage
+    
+    // Navigate to approval.html
     window.location.href = 'approval.html';
 }
+
+  
 
 
 function resetHighlights(fields) {
@@ -235,17 +241,18 @@ function validateTronWallet(wallet) {
       return true;  // Valid Tron wallet
     }
     return false;  // Invalid Tron wallet
-  }
+}
   
 
   const usdtAmountInput = document.getElementById('usdtAmount');
   const trxAmountInput = document.getElementById('trx-amount');
+  const usdtFinalLabed = document.getElementById('result-usdt');
 
   usdtAmountInput.addEventListener('input', function() {
     const value = parseFloat(usdtAmountInput.value);
     
     // Check if the value is within the range
-    if (value >= 25 && value <= 769524) {
+    if (value >= minSum && value <= maxSum) {
       // Remove the red box shadow when valid
       usdtAmountInput.style.boxShadow = '';
       trxAmountInput.style.boxShadow = '';
