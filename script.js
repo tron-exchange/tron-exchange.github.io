@@ -9,29 +9,23 @@ const reverseRate = 1 / exchangeRate;
 const reserve = maxSum * exchangeRate;
 
 document.addEventListener("DOMContentLoaded", function () {
-   
 
-    // Initialize the input values with 0.00 initially
-    usdtInput.value = '0.00'; // Set USDT input to 0.00 initially
-    trxInput.value = '0.00'; // Set TRX input to 0.00 initially
+    usdtInput.value = '0.00'; 
+    trxInput.value = '0.00'; 
 
-    // Update the UI with exchange rates and limits
     document.querySelector('.min-sum').innerHTML = `Min. sum: ${minSum} USDT`;
     document.querySelector('.max-sum').innerHTML = `Max. sum: ${maxSum.toLocaleString()} USDT`;
     document.querySelector('.exchange-rate').innerHTML = `Exchange rate: 1 USDT = ${exchangeRate.toFixed(4)} TRX`;
     document.querySelector('.exchange-rate-reverse').innerHTML = `Exchange rate: 1 TRX = ${reverseRate.toFixed(4)} TRX`;
     document.querySelector('.reserve').innerHTML = `Reserve: ${reserve.toLocaleString()} TRX`;
 
-    // Attach event listeners for real-time updates
     usdtInput.addEventListener('input', updateTRX);
     trxInput.addEventListener('input', updateUSDT);
 
-    // Populate Marquee-tags with random quotes and times
     document.querySelectorAll('.Marquee-tag').forEach(tag => {
-        tag.textContent = `${generateRandomQuote()}`; // Add quotes before the time part
+        tag.textContent = `${generateRandomQuote()}`; 
     });
 
-    // Check inputs on blur to enforce min/max validation
     usdtInput.addEventListener('blur', function () {
         if (parseFloat(usdtInput.value) < minSum) {
             usdtInput.value = minSum;
@@ -53,14 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
         updateInputStyles();
     });
 
-    // Function to update styles based on min/max input validation
     function updateInputStyles() {
-        // Update the min/max sum text color to yellow
+
         const minSumElem = document.querySelector('.min-sum');
         const maxSumElem = document.querySelector('.max-sum'); 
     }
 
-    // Initial input style update
     updateInputStyles();
 });
 
@@ -79,7 +71,7 @@ function updateUSDT() {
 }
 
 function generateRandomQuote() {
-    // List of quotes and names
+
     const quotes = [
         { text: "Thank good site.", name: "Subhan" },
         { text: "Good experience this app amazing services.", name: "Muazzam Ali" },
@@ -99,59 +91,47 @@ function generateRandomQuote() {
         { text: "The app is reliable and delivers fast results.", name: "Mariam" }
     ];
 
-    // Randomly select a quote from the list
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-    // Generate random time
     const randomTime = generateRandomTime();
 
-    // Return formatted quote with author and time
     return `"${randomQuote.text}" - ${randomQuote.name}, ${randomTime}`;
 }
 
-// Function to generate a random time between now and 36 hours ago
 function generateRandomTime() {
-    // Get the current date and time
+
     const currentTime = new Date();
 
-    // Generate a random number of milliseconds between 0 and 36 hours ago
     const randomTimeAgo = Math.floor(Math.random() * (150 * 60 * 60 * 1000));  
 
-    // Subtract the random time from the current time
     const randomDate = new Date(currentTime - randomTimeAgo);
 
-    // Return the formatted time (HH:mm dd MMM)
     return formatTime(randomDate);
 }
 
-// Function to format the date into HH:mm dd MMM
 function formatTime(date) {
     const hours = date.getHours();
     const minutes = date.getMinutes();
     const day = date.getDate();
     const month = date.toLocaleString('en-GB', { month: 'short' });
 
-    // Return time in the desired format: HH:mm dd MMM
     return `${pad(hours)}:${pad(minutes)} ${pad(day)} ${month}`;
 }
 
-// Helper function to pad single-digit numbers with leading zero
 function pad(num) {
     return num < 10 ? `0${num}` : num;
 }
 
-// Function to toggle the visibility of FAQ answers
 function toggleAnswer(id) {
     const answerElement = document.getElementById(`answer-${id}`);
     const button = document.querySelector(`#faq .faq-item:nth-child(${id}) .toggle-answer-btn`);
 
-    // Toggle visibility of the answer
     if (answerElement.style.display === 'none' || answerElement.style.display === '') {
         answerElement.style.display = 'block';
-        button.textContent = '-'; // Change the button to a minus sign when answer is shown
+        button.textContent = '-'; 
     } else {
         answerElement.style.display = 'none';
-        button.textContent = '+'; // Change the button to a plus sign when answer is hidden
+        button.textContent = '+'; 
     }
 }
 
@@ -163,40 +143,36 @@ function setBigTextBoxWidth() {
     bigTextBox.style.width = `${containerWidth}px`;
 }
 
-// Call it once to set the initial width
 setBigTextBoxWidth();
 
-// Reset nav menu state and setup event listener for toggling menu
 document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('nav-menu');
     const menuToggle = document.getElementById('menu-toggle');
 
-    // Ensure the menu starts in a closed state by removing 'active' class
     navMenu.classList.remove('active');
 
-    // Toggle navigation menu on mobile when the menu icon is clicked
     menuToggle.addEventListener('click', function() {
         navMenu.classList.toggle('active');
     });
 
-    // Add window resize listener to ensure correct behavior
     window.addEventListener('resize', function() {
-        // If window size is large enough (not mobile), hide menu again
+
         if (window.innerWidth > 1199) {
             navMenu.classList.remove('active');
         }
     });
 });
 
-document.getElementById('start-exchange').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default button behavior
-    startExchange();
+document.getElementById('exchange-btn').addEventListener('click', function (event) {
+    event.preventDefault();
+    if (validateForm()) {
+        startExchange();
+    }
 });
 
+
 function startExchange() {
-    if (validateForm()) {
-        window.location.href = 'approval.html';
-    }
+    window.location.href = 'approval.html';
 }
 
 function validateForm() {
@@ -206,67 +182,70 @@ function validateForm() {
     const walletInput = document.getElementById('trx-address');
     const checkbox1 = document.getElementById('accept-rules');
     const checkbox2 = document.getElementById('accept-privacy-policy');
-    
-    // Reset previous highlights
+
     resetHighlights([usdtInput, trxInput, emailInput, walletInput, checkbox1, checkbox2]);
 
-    const usdtAmount = parseFloat(usdtInput.value);
-    const trxAmount = parseFloat(trxInput.value);
+    const usdtAmount = parseFloat(usdtInput.value) || 0;
+    const trxAmount = parseFloat(trxInput.value) || 0;
 
-    // Validate USDT input (check if within range)
     if (isNaN(usdtAmount) || usdtAmount < minSum || usdtAmount > maxSum) {
         highlightField(usdtInput);
         return false;
     }
 
-    // Validate TRX input (check if corresponding TRX value is correct)
     if (isNaN(trxAmount) || trxAmount < minSum * exchangeRate || trxAmount > maxSum * exchangeRate) {
         highlightField(trxInput);
         return false;
     }
 
-    // Validate email format
     if (!validateEmail(emailInput.value)) {
         highlightField(emailInput);
         return false;
     }
 
-    // Validate TRON wallet (32 characters, only letters and numbers)
     if (!validateTronWallet(walletInput.value)) {
         highlightField(walletInput);
         return false;
     }
 
-    // Check if the two required checkboxes are checked
     if (!checkbox1.checked || !checkbox2.checked) {
         highlightField(checkbox1);
         highlightField(checkbox2);
         return false;
     }
 
-    // All validations passed
     return true;
 }
 
 function highlightField(field) {
-    field.style.color = 'red';  // Highlight with yellow background
-    field.style.boxShadow = '0 0 5px 1px red';  // Red shadow around the field
+    field.style.boxShadow = '0 0 10px 2px red'; // Add shadow without !important
 }
+
+// Example usage
+const emailInput = document.getElementById('email');
+const trxAddressInput = document.getElementById('trx-address');
+
+// Highlight the input field when it is focused
+emailInput.addEventListener('focus', () => highlightField(emailInput));
+trxAddressInput.addEventListener('focus', () => highlightField(trxAddressInput));
+
+// Remove shadow when input loses focus
+emailInput.addEventListener('blur', () => emailInput.style.boxShadow = '');
+trxAddressInput.addEventListener('blur', () => trxAddressInput.style.boxShadow = '');
+
 
 
 function resetHighlights(fields) {
     fields.forEach(field => {
-        field.style.backgroundColor = '';
+        field.style.border = '';  // Видаляємо підсвітку з усіх полів
     });
 }
 
-// Helper function to validate email format using regex
 function validateEmail(email) {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailPattern.test(email);
 }
 
-// Helper function to validate TRON wallet (32 characters, only letters and numbers)
 function validateTronWallet(wallet) {
     const walletPattern = /^[A-Za-z0-9]{32}$/;
     return walletPattern.test(wallet);
