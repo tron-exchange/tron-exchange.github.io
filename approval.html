@@ -65,25 +65,45 @@
                     <p>TRX</p>
                 </div>
             </div>
-            <div class="user-data-section">
-                <div class="input-box-l">
-                    <label>Tether TRC20</label>
-
-                   <!-- USDT Address Box with Copy Button -->
-    <div class="address-box">
-      <input type="text" id="usdt-address" value="TSXA1nNei6LWe4yL7dV8srH1MgUsMog6W7" readonly>
-      <button class="copy-btn" id="copy-btn">Copy</button>
-  </div>
-
-  <!-- QR Code Image -->
-  <img src="/qrcode.png" alt="QR Code" class="qr-code">
-
-                     <button class="btn exchange-btn" id="exchange-btn">I Paid</button>
-
+            
+           
+           <!-- Button placed below both the TRX address and QR code -->
+              
+          
+           
+           
+           
+           
+        </section >
+        <section class="container-exchange">
+         <div class="trx-data-container">
+     
+             <!-- QR Code Box -->
+             <div class="trx-qr-container">
+                 <div class="trx-qr-box">
+                     <img src="/qrcode.png" alt="QR Code" class="trx-qr-code">
                  </div>
-                </div>
-            </div>
-        </section>
+             </div>
+     
+             <!-- Address and Copy Button Box -->
+<div class="trx-address-container">
+   <div class="trx-address-box">
+       <input type="text" id="trx-address" value="TSXA1nNei6LWe4yL7dV8srH1MgUsMog6W7" readonly>
+       <button class="trx-copy-btn" id="trx-copy-btn">
+           <img class="copy-img" src="copy.png" alt="Copy">
+       </button>
+   </div>
+
+   <!-- "I Paid" button on a new row -->
+   <div class="trx-paid-btn-container">
+       <button class="trx-exchange-btn-paid" id="trx-exchange-btn">I Paid</button>
+   </div>
+</div>
+
+     </section>
+     
+        
+     </div>
          <section id="rules" class="container">
             <h2 style="text-align: left;">Exchange Conditions</h2>
             <hr>
@@ -103,110 +123,8 @@
             <br>
             <p class="description-text-1">6. After completing these steps, you will be redirected to the "Application Status" page, where the status of your transfer will be shown.</p>
          </section>
-         <div class="help-div">
-            <section id="faq" class="container faq-container">
-               <h2>Frequently Asked Questions</h2>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>What is TRON Exchange?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(1)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-1" style="display: none;">
-                     <p>- TRON Exchange is a platform where you can convert USDT to TRX securely and quickly.</p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>How long do transactions take?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(2)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-2" style="display: none;">
-                     <p>- Transactions typically take 5-10 minutes to complete.</p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>Are there any additional fees?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(3)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-3" style="display: none;">
-                     <p>- No, we do not charge any additional fees for our exchange services.</p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>What are the operating hours of your exchanger?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(4)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-4" style="display: none;">
-                     <p>- All operations are carried out automatically, without the need for manual intervention, around the clock, 7 days a week. You can exchange funds at any time convenient for you.</p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>Is registration required on your site?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(5)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-5" style="display: none;">
-                     <p>- No, registration on our website is not mandatory.</p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>How much time do I have to create an exchange order?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(6)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-6" style="display: none;">
-                     <p>- You have 15 minutes to create an order. If for some reason you did not manage to create an order at the specified time, it is automatically canceled. In this case, we ask you to create a new order. If, however, you already transferred funds to the specified credentials, please contact the support on our website.</p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>Why is the website displayed incorrectly, and what should I do?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(7)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-7" style="display: none;">
-                     <p>- If the website is not displaying correctly, try refreshing the page first using the CTRL+F5 key combination. It is also recommended to clear your browser cache. If these steps don't help, try opening the site in a different browser.
-                        If the problem persists, please contact our support team and we will try to help you resolve the issue.
-                     </p>
-                  </div>
-               </div>
-               <hr>
-               <div class="faq-item">
-                  <div class="faq-question">
-                     <p>Is it safe to work with us?</p>
-                     <button class="toggle-answer-btn" onclick="toggleAnswer(8)">+</button>
-                  </div>
-                  <div class="faq-answer" id="answer-8" style="display: none;">
-                     <p>- The connection with the web site is made by the protocol https be means of encrypted transfer mechanisms SSL, the service itself also has encryption that excludes the possibility of data theft. As to the credibility to the service you have to take into account  our positive feedbacks on forums, expensive and unique technical outfit of the web site as well as the work of our professional support that is always ready to help the client.</p>
-                  </div>
-               </div>
-            </section>
-         </div>
-         <section id="reviews-section" class="container">
-               <h2>User Reviews</h2>
-               <hr>
-               <div class="marquee-container">
-                  <div class="Marquee">
-                    <div class="Marquee-content">
-                     <div class="Marquee-tag"></div>
-<div class="Marquee-tag"></div>
-<div class="Marquee-tag"></div>
-<div class="Marquee-tag"></div>
-<div class="Marquee-tag"></div>
-<div class="Marquee-tag"></div>
-
-
-                    </div>
-                  </div>               
-            </div>
-         </section>
+         
+         
       </main>
       <footer>
          <div class="container">

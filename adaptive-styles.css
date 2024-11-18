@@ -1,4 +1,4 @@
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
     /* Exchange container styling */
     .exchange-container {
         margin-top: 0;
@@ -24,6 +24,11 @@
     .description-text {
         font-size: 16px;
         text-align: justify;
+    }
+
+
+    .trx-qr-container{
+        display: none;
     }
 
     /* Headings */

@@ -567,32 +567,92 @@ border: 1px solid #3d444d;
 	}
   }
 
-  .address-box {
+  /* Container for both QR code and address */
+.trx-data-container {
+	justify-content: center;
+    display: flex;
+	gap: 20px;
+    align-items: center;
+}
+
+/* QR Code Box Styling */
+.trx-qr-box {
+    border: 1px solid #3d444d;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #0D1117;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    justify-content: center;
 }
 
-.address-box input {
-    border: 1px solid #ccc;
-    padding: 5px;
-    width: 250px; /* Adjust width as needed */
-    margin-right: 10px;
+.trx-qr-code {
+    width: 100px;
+    height: 100px;
 }
 
-.copy-btn {
-    background-color: #007bff;
+/* Address and Copy Button Box Styling */
+.trx-address-container {
+    border: 1px solid #3d444d;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #0D1117;
+    display: flex;
+    flex-direction: column; /* Stack items in a column */
+    align-items: flex-start; /* Align items to the start of the container */
+}
+
+.trx-address-box {
+    display: flex;
+    align-items: center;
+}
+
+#trx-address {
+	font-weight: 500;
+    letter-spacing: 2px;
+    background-color: #151B23;
     color: white;
-    padding: 5px 10px;
-    cursor: pointer;
     border: none;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.copy-btn:hover {
-    background-color: #0056b3;
+.trx-copy-btn {
+    height: 35px;
+	width: 70px;
+    margin-left: 10px;
+    padding: 10px 15px;
+    background-color: #279139;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.qr-code {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
+.copy-img {
+    height: 100%;
 }
+
+/* "I Paid" Button on a new row */
+.trx-paid-btn-container {
+    margin-top: 10px; /* Add space between the input section and the button */
+    width: 100%; /* Ensure the button is properly aligned */
+}
+
+.trx-exchange-btn-paid {
+    width: auto;
+    background-color: #279139;
+    color: #fff;
+	width: 100%;
+    border-radius: 6px;
+    padding: 10px 15px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.container-exchange {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0px 20px;
+	width: 60%}
