@@ -26,9 +26,33 @@
         text-align: justify;
     }
 
+    .trx-data-container{
+        display: block;
+    }
 
     .trx-qr-container{
-        display: none;
+        width: fit-content;
+        margin-bottom: 20px;
+    }
+
+    .trx-address-container{
+margin: 0;
+width: fit-content;
+    }
+
+    .trx-copy-btn{
+        width: 30px;
+        padding: 7px 6px;
+    }
+
+    #trx-address{
+        font-size: 14px;
+        letter-spacing:1px;
+        width: 339px;
+    }
+
+    .container-exchange{
+        width: 90%;
     }
 
     /* Headings */
@@ -91,7 +115,6 @@
 		background-color: #010409;
 		padding: 10px 0;
 		text-align: center;
-		border: 1px solid #3d444d;
 	}
 
     /* Show nav menu when active */
