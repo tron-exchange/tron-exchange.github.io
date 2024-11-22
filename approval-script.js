@@ -36,17 +36,34 @@ document.getElementById('trx-copy-btn').addEventListener('click', function() {
 });
 
 document.getElementById('paidBtn').addEventListener('click', function() {
-    // Calculate the screen center for the new window
-    const windowWidth = 500;
-    const windowHeight = 500;
-    const left = (window.screen.width / 2) - (windowWidth / 2);
-    const top = (window.screen.height / 2) - (windowHeight / 2);
-  
-    // Open the new window with specified size at the calculated position
-    window.open(
-      'about:blank', // Replace with the actual URL of your content
-      'PaymentWindow',
-      `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`
-    );
+    // Show the overlay
+    document.getElementById('overlay').style.display = 'flex';
+    startCountdown();
   });
+  
+  // Close the overlay when the close button is clicked
+  document.getElementById('closeBtn').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'none';
+  });
+  
+  // Countdown function for 15 minutes
+  function startCountdown() {
+    var timeLeft = 15 * 60; // 15 minutes in seconds
+    var countdownElement = document.getElementById('countdown');
+    
+    var timer = setInterval(function() {
+      var minutes = Math.floor(timeLeft / 60);
+      var seconds = timeLeft % 60;
+      seconds = seconds < 10 ? '0' + seconds : seconds; // Add leading zero if seconds < 10
+      
+      countdownElement.textContent = `Time remaining: ${minutes}:${seconds}`;
+      
+      timeLeft--;
+      
+      if (timeLeft < 0) {
+        clearInterval(timer);
+        countdownElement.textContent = 'Time expired.';
+      }
+    }, 1000);
+  }
   
