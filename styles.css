@@ -142,31 +142,7 @@ font-size: inherit;
 color: #9198A1;
 margin: 0 0
 }
-.btn.exchange-btn {
-width: 100%;
-padding: 12px;
-background-color: #279139;
-color: #fff;
-text-align: center;
-text-decoration: none;
-border: none;
-border-radius: 5px;
-box-sizing: border-box;
-font-size: 15px;
-cursor: pointer;
-font-weight: 600;
-}
-.btn.exchange-btn:hover {
-background-color: #2ea043
-}
-.btn.exchange-btn:focus {
-outline: 0
-}
-.btn.exchange-btn:active {
-background-color: #2c974b;
-box-shadow: inset 0 1px 0 rgba(20, 70, 32, .2);
-transition: none
-}
+
 input[type=number]:focus,
 input[type=number]:hover {
 border: 2px solid #0366d6;
@@ -569,7 +545,6 @@ border: 1px solid #3d444d;
 
   /* Container for both QR code and address */
 .trx-data-container {
-	justify-content: center;
     display: flex;
 	gap: 20px;
     align-items: center;
@@ -603,31 +578,62 @@ border: 1px solid #3d444d;
 }
 
 .trx-address-box {
-    display: flex;
+	width: 500px;
     align-items: center;
 }
 
 #trx-address {
 	font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     background-color: #151B23;
     color: white;
     border: none;
     padding: 10px;
     border-radius: 5px;
-	width: 393px;
+	width: 80%;
 }
+
+.btn.exchange-btn {
+	width: 100%;
+	padding: 12px;
+	background-color: #279139;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 5px;
+	box-sizing: border-box;
+	font-size: 15px;
+	cursor: pointer;
+	font-weight: 600;
+	}
+	.btn.exchange-btn:hover {
+	background-color: #2ea043
+	}
+	.btn.exchange-btn:focus {
+	outline: 0
+	}
+	.btn.exchange-btn:active {
+	background-color: #2c974b;
+	box-shadow: inset 0 1px 0 rgba(20, 70, 32, .2);
+	transition: none
+	}
 
 .trx-copy-btn {
     height: 35px;
 	width: 70px;
     margin-left: 10px;
     padding: 10px 15px;
-    background-color: #279139;
+	background-color: #279139;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.trx-copy-btn:hover{
+
+	background-color: #2ea043
 }
 
 .copy-img {
@@ -657,3 +663,8 @@ border: 1px solid #3d444d;
 	margin: 0 auto;
 	padding: 0px 20px;
 	width: 60%}
+
+	h3{
+		font-weight: 500;
+		font-size: 20px;
+	}
