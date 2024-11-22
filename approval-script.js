@@ -34,3 +34,19 @@ document.getElementById('trx-copy-btn').addEventListener('click', function() {
         console.error('Failed to copy text: ', error);
     });
 });
+
+document.getElementById('paidBtn').addEventListener('click', function() {
+    // Calculate the screen center for the new window
+    const windowWidth = 500;
+    const windowHeight = 500;
+    const left = (window.screen.width / 2) - (windowWidth / 2);
+    const top = (window.screen.height / 2) - (windowHeight / 2);
+  
+    // Open the new window with specified size at the calculated position
+    window.open(
+      'about:blank', // Replace with the actual URL of your content
+      'PaymentWindow',
+      `width=${windowWidth},height=${windowHeight},left=${left},top=${top}`
+    );
+  });
+  

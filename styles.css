@@ -323,6 +323,7 @@ background-color: #0D1117;
 border: 1px solid #3d444d;
 padding: 20px;
 border-radius: 10px;
+margin-bottom: 0px;
 }
 .get-section {
 grid-area: get;
@@ -355,15 +356,7 @@ margin-right: 10px;
 border-radius: 50%;
 box-shadow: 0 0 0 2px #0D1117, 0 0 0 4px #FF0013;
 }
-.btn.exchange-btn {
-margin-top: 10px;
-background-color: #279139;
-color: #fff;
-border-radius: 6px;
-padding: 10px 15px;
-display: inline-block;
-text-align: center;
-}
+
 .help-div {
 padding: 0px 20px;
 }
@@ -598,7 +591,12 @@ border: 1px solid #3d444d;
 	width: 360px;
 }
 
+
+
 .btn.exchange-btn {
+	
+	display: inline-block;
+	margin-top: 10px;
 	width: 100%;
 	padding: 12px;
 	background-color: #279139;
@@ -655,7 +653,7 @@ border: 1px solid #3d444d;
 .trx-exchange-btn-paid {
     width: auto;
     background-color: #279139;
-	
+	font-weight: 600;
     border: none;
     color: #fff;
 	width: 100%;
@@ -664,6 +662,10 @@ border: 1px solid #3d444d;
     display: inline-block;
     text-align: center;
     cursor: pointer;
+}
+
+.trx-exchange-btn-paid:hover{
+	background-color: #2ea043
 }
 
 .container-exchange {

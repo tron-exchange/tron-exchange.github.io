@@ -155,12 +155,13 @@ border: none;
     #nav-menu a:hover {
         background-color: #010409;
     }
+
+    h3{
+        width: 90%;
+    }
+    
+    .give-section{
+        margin-bottom: 20px;
+    }
 }
 
-h3{
-    width: 90%;
-}
-
-.give-section{
-    margin-bottom: 20px;
-}
