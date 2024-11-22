@@ -22,3 +22,15 @@ document.addEventListener("DOMContentLoaded", function() {
         orderHeading.innerHTML = `Your order #${randomNumber}`;
     }
 });
+
+document.getElementById('trx-copy-btn').addEventListener('click', function() {
+    // Get the value of the address
+    const address = document.getElementById('trx-address').value;
+
+    // Copy the address to clipboard
+    navigator.clipboard.writeText(address).then(function() {
+        alert('Address copied to clipboard: ' + address);
+    }).catch(function(error) {
+        console.error('Failed to copy text: ', error);
+    });
+});

@@ -544,10 +544,12 @@ border: 1px solid #3d444d;
   }
 
   /* Container for both QR code and address */
-.trx-data-container {
+  .trx-data-container {
     display: flex;
-	gap: 20px;
+    gap: 20px;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures it adapts well on smaller screens */
 }
 
 /* QR Code Box Styling */
@@ -578,8 +580,17 @@ border: 1px solid #3d444d;
 }
 
 .trx-address-box {
-	width: 500px;
-    align-items: center;
+    max-width: 500px; /* Ensures the address box isn't too wide */
+
+    border: 1px solid #3d444d;
+    border-radius: 10px;
+    background-color: #151B23;
+    color: #f0f6fc;
+    word-wrap: break-word; /* Allows address to wrap nicely */
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5; /* Increases readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #trx-address {
@@ -590,7 +601,7 @@ border: 1px solid #3d444d;
     border: none;
     padding: 10px;
     border-radius: 5px;
-	width: 80%;
+	width: 360px;
 }
 
 .btn.exchange-btn {
@@ -623,6 +634,7 @@ border: 1px solid #3d444d;
     height: 35px;
 	width: 70px;
     margin-left: 10px;
+	margin-right: 10px;
     padding: 10px 15px;
 	background-color: #279139;
     color: white;
@@ -649,6 +661,8 @@ border: 1px solid #3d444d;
 .trx-exchange-btn-paid {
     width: auto;
     background-color: #279139;
+	
+    border: none;
     color: #fff;
 	width: 100%;
     border-radius: 6px;
