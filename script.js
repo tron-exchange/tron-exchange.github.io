@@ -207,11 +207,21 @@ trxAddressInput.addEventListener('blur', () => trxAddressInput.style.boxShadow =
 
 function startExchange() {
     const usdtInput = document.getElementById('usdtAmount');
-    localStorage.setItem('usdtAmount', usdtInput.value);  // Save the value to localStorage
+    localStorage.setItem('usdtAmount', usdtInput.value);  // Save the USDT amount to localStorage
+
+    // Generate 8 random digits
+    const randomNumber = Math.floor(10000000 + Math.random() * 90000000);
+
+    // Save the random number to localStorage for future use
+    localStorage.setItem('randomNumber', randomNumber);
+
+    // Navigate to the approval page with the random number in the URL
+    window.location.href = `approval.html?order-approval-${randomNumber}`;
     
-    // Navigate to approval.html
-    window.location.href = 'approval.html';
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const usdtAmount = localStorage.getItem('usdtAmount');  // Get the value from localStorage

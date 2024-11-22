@@ -31,28 +31,36 @@
     }
 
     .trx-qr-container{
-        width: fit-content;
+        width: 95%;
         margin-bottom: 20px;
     }
 
     .trx-address-container{
 margin: 0;
 width: fit-content;
+padding: 0px;
+background-color:black;
+border: none;
+    }
+
+    .trx-qr-code{
+        width: 124px;
+        height: 124px;
     }
 
     .trx-copy-btn{
         width: 30px;
-        padding: 7px 6px;
+        padding: 10px 6px;
     }
 
     #trx-address{
         font-size: 14px;
-        letter-spacing:1px;
-        width: 339px;
+        letter-spacing:0px;
+        width: 310px;
     }
 
     .container-exchange{
-        width: 90%;
+        width: 95%;
     }
 
     /* Headings */
