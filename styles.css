@@ -708,7 +708,7 @@ border: 1px solid #3d444d;
   
   /* Content box inside the overlay */
   #overlayContent {
-	padding: 100px;
+	padding: 50px;
 	background-color: #0D1117;
 	border:#3d444d 1px solid;
 	display: flex;
@@ -729,5 +729,25 @@ border: 1px solid #3d444d;
   #countdown {
 	font-size: 20px;
 	padding-bottom: 10px;
+  }
+  /* Close button (X) */
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 24px;
+	cursor: pointer;
+  }
+  
+  .close-btn:hover {
+	color: #ff5c5c; /* Red hover color */
+  }
+  
+  /* Ensure the overlayContent has relative positioning for close button */
+  #overlayContent {
+	position: relative;
   }
   

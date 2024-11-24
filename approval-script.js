@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const usdtAmount = localStorage.getItem('usdtAmount');
     const trxAmount = localStorage.getItem('trxAmount');
@@ -35,35 +33,41 @@ document.getElementById('trx-copy-btn').addEventListener('click', function() {
     });
 });
 
+let timer; // Global variable to hold the countdown timer
+let timeLeft = 15 * 60; // 15 minutes in seconds
+
+// Show the overlay and start the countdown (only if not already running)
 document.getElementById('paidBtn').addEventListener('click', function() {
-    // Show the overlay
-    document.getElementById('overlay').style.display = 'flex';
+  document.getElementById('overlay').style.display = 'flex';
+  
+  // Only start the countdown if it hasn't started yet
+  if (!timer) {
     startCountdown();
-  });
-  
-  // Close the overlay when the close button is clicked
-  document.getElementById('closeBtn').addEventListener('click', function() {
-    document.getElementById('overlay').style.display = 'none';
-  });
-  
-  // Countdown function for 15 minutes
-  function startCountdown() {
-    var timeLeft = 15 * 60; // 15 minutes in seconds
-    var countdownElement = document.getElementById('countdown');
-    
-    var timer = setInterval(function() {
-      var minutes = Math.floor(timeLeft / 60);
-      var seconds = timeLeft % 60;
-      seconds = seconds < 10 ? '0' + seconds : seconds; // Add leading zero if seconds < 10
-      
-      countdownElement.textContent = `Time remaining: ${minutes}:${seconds}`;
-      
-      timeLeft--;
-      
-      if (timeLeft < 0) {
-        clearInterval(timer);
-        countdownElement.textContent = 'Time expired.';
-      }
-    }, 1000);
   }
+});
+
+// Close the overlay but keep the timer running
+document.getElementById('closeBtn').addEventListener('click', function() {
+  document.getElementById('overlay').style.display = 'none';
+});
+
+// Countdown function
+function startCountdown() {
+  var countdownElement = document.getElementById('countdown');
   
+  timer = setInterval(function() {
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds; // Add leading zero if seconds < 10
+    
+    countdownElement.textContent = `Time remaining: ${minutes}:${seconds}`;
+    
+    timeLeft--;
+    
+    if (timeLeft < 0) {
+      clearInterval(timer);
+      countdownElement.textContent = 'Time expired.';
+      timer = null; // Reset timer when expired
+    }
+  }, 1000);
+}

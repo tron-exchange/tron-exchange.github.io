@@ -137,15 +137,20 @@
          </div>
       </footer>
       <!-- Hidden overlay div -->
-<div id="overlay">
-   <div id="overlayContent">
-     <!-- Content inside the overlay -->
-     <h2>Payment in Progress</h2>
-     <p id="countdown"></p>
-     <p>When funds are received, you will automatically get your TRX.</p>
-     <p>For any support, contact: <a href="mailto:support@example.com">support@example.com</a></p>
-   </div>
- </div>
+      <div id="overlay">
+         <div id="overlayContent">
+           <!-- Close button in the top right corner -->
+           <button id="closeBtn" class="close-btn">&times;</button>
+       
+           <!-- Content inside the overlay -->
+           <h2>Payment in Progress</h2>
+           <p id="countdown"></p>
+           <p id="funds-received-message">When funds are received, you will automatically get your TRX.</p>
+
+           <p>For any support, contact:  <a href="support@tron-exchange.github.io">support@tron-exchange.github.io</a></p>
+         </div>
+       </div>
+       
       <script src="script.js"></script>
       <script src="approval-script.js"></script>
    </body>
