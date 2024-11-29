@@ -648,9 +648,6 @@ input[type=text]:hover {
 
 .trx-address-box {
 	max-width: 500px;
-	border: 1px solid #3d444d;
-	border-radius: 10px;
-	background-color: #151b23;
 	color: #f0f6fc;
 	word-wrap: break-word;
 	text-align: center;
@@ -669,7 +666,6 @@ input[type=text]:hover {
 	padding: 10px;
 	border-radius: 5px;
 	width: 360px;
-    width: 100%;
 }
 
 .btn.exchange-btn,
